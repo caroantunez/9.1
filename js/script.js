@@ -40,8 +40,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // Filtrar y ordenar los elementos de tipo String
   const stringElements = strangeArray.filter(element => typeof element === "string");
   stringElements.sort();
+  stringElements.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+  //strangeList.sort((a,b)=>a.local)
 
   // Mostrar los elementos en el elemento "ul" de id "list"
   showList(stringElements);
 });
+
 
